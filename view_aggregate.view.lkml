@@ -9,10 +9,7 @@ view: view_aggregate {
     #        contentview.c8002_artid ,
     #        ORDER BY 1,2,3,4,5,6,7,8,9 ASC
     #    sql_trigger_value: SELECT FLOOR((EXTRACT(epoch from convert_timezone('HKT',GETDATE())) - 60*60*4)/(60*60*24))
-    sql_trigger_value: SELECT 1 ;;
-    #    persist_for: 72 hours
-    sortkeys: ["c8002_datetime"]
-    distribution: "c8002_cid"
+
     sql: SELECT
       DATE(contentview.c8002_datetime) as "c8002_datetime",
       contentview.c8002_product ,
@@ -35,6 +32,10 @@ view: view_aggregate {
       FROM public.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14
        ;;
+    sql_trigger_value: SELECT 1
+    -- persist_for: "6 hours"
+    ìndexes: ["c8002_datetime" , "c8002_cid" ]
+    distribution: "c8002_cid"
   }
 
   dimension: view_type {
@@ -179,7 +180,7 @@ view: view_aggregate {
 
   measure: count {
     type: count
-    approximate: yes
+   # approximate: yes
     drill_fields: []
   }
 
@@ -187,13 +188,13 @@ view: view_aggregate {
     #    view_label: User
     type: count_distinct
     sql: ${user_id} ;;
-    approximate: yes
+    # approximate: yes
   }
 
   measure: distinct_content {
     #    view_label: Content
     type: count_distinct
     sql: ${content_id} ;;
-    approximate: yes
+    # approximate: yes
   }
 }
