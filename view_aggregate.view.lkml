@@ -32,10 +32,10 @@ view: view_aggregate {
       FROM Testing_BQ.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14
        ;;
-    sql_trigger_value: SELECT 1
-    -- persist_for: "6 hours"
-    -- ìndexes: ["c8002_datetime" , "c8002_cid" ]
-    -- distribution: "c8002_cid"
+    sql_trigger_value: SELECT 1 ;;
+    # persist_for: "6 hours"
+    # ìndexes: ["c8002_datetime" , "c8002_cid" ]
+    # distribution: "c8002_cid"
   }
 
   dimension: view_type {
