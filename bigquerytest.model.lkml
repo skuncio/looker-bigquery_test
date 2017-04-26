@@ -14,6 +14,11 @@ explore: view_aggregate {
   view_label: "Content & Users"
   }
 
+explore: view_aggregate_with_article {
+  label: "2) Content Summary by CID (2 mths by day)"
+  view_label: "Article & Video Views - Summary"
+  }
+
 explore: t8001_user_crossref {}
 
 explore: t8002_contentview {}
