@@ -11,7 +11,7 @@ view: view_aggregate {
     #    sql_trigger_value: SELECT FLOOR((EXTRACT(epoch from convert_timezone('HKT',GETDATE())) - 60*60*4)/(60*60*24))
 
     sql: SELECT
-      DATE(contentview.c8002_datetime) as "c8002_datetime",
+      DATE(contentview.c8002_datetime) as c8002_datetime,
       contentview.c8002_product ,
       contentview.c8002_region ,
       contentview.c8002_platform ,
@@ -25,11 +25,11 @@ view: view_aggregate {
       contentview.c8002_auto,
       contentview.c8002_cid ,
       contentview.c8002_nxtu_or_did ,
-      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS "total_page_views",
-      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS "total_video_views",
+      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
+      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
       AVG(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW')
-      THEN contentview.c8002_video_duration ELSE NULL END ) AS "average_duration"
-      FROM public.t8002_contentview AS contentview
+      THEN contentview.c8002_video_duration ELSE NULL END ) AS average_duration
+      FROM Testing_BQ.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14
        ;;
     sql_trigger_value: SELECT 1
