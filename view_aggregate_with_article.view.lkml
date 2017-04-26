@@ -79,7 +79,7 @@ view: view_aggregate_with_article {
     # sortkeys: ["c8002_datetime"]
     #  distribution: "c8002_cid"
     sql: SELECT
-      DATE(contentview.c8002_datetime) as "c8002_datetime",
+      DATE(contentview.c8002_datetime) as c8002_datetime,
       contentview.c8002_product ,
       contentview.c8002_region ,
       contentview.c8002_platform ,
@@ -99,10 +99,10 @@ view: view_aggregate_with_article {
       contentview.c8002_auto,
       contentview.c8002_language ,
       contentview.c8002_keyword ,
-      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS "total_page_views",
-      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS "total_video_views",
+      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
+      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
       AVG(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW')
-      THEN contentview.c8002_video_duration ELSE NULL END ) AS "average_duration"
+      THEN contentview.c8002_video_duration ELSE NULL END ) AS average_duration
       FROM  Testing_BQ.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
       ORDER BY 1,2,3,4,5 ASC
