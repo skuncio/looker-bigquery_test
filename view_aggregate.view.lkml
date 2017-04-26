@@ -34,8 +34,8 @@ view: view_aggregate {
        ;;
     sql_trigger_value: SELECT 1
     -- persist_for: "6 hours"
-    ìndexes: ["c8002_datetime" , "c8002_cid" ]
-    distribution: "c8002_cid"
+    -- ìndexes: ["c8002_datetime" , "c8002_cid" ]
+    -- distribution: "c8002_cid"
   }
 
   dimension: view_type {
