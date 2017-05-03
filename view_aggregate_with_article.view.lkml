@@ -3,29 +3,29 @@ view: view_aggregate_with_article {
   derived_table: {
     sql: SELECT
       DATE(contentview.c8002_datetime) as c8002_datetime,
-      contentview.c8002_product ,
-      contentview.c8002_region ,
-      contentview.c8002_platform ,
-      contentview.c8002_source ,
-      contentview.c8002_app_version,
-      contentview.c8002_category,
-      contentview.c8002_channel,
-      contentview.c8002_section ,
-      contentview.c8002_issueid,
-      contentview.c8002_news ,
-      contentview.c8002_content,
-      contentview.c8002_edm,
-      contentview.c8002_action,
-      contentview.c8002_cid ,
-      contentview.c8002_artid,
-      contentview.c8002_title,
-      contentview.c8002_auto,
-      contentview.c8002_language ,
-      contentview.c8002_keyword ,
-      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
-      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
-      AVG(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW')
-      THEN contentview.c8002_video_duration ELSE NULL END ) AS average_duration
+      c8002_product ,
+      c8002_region ,
+      c8002_platform ,
+      c8002_source ,
+      c8002_app_version,
+      c8002_category,
+      c8002_channel,
+      c8002_section ,
+      c8002_issueid,
+      c8002_news ,
+      c8002_content,
+      c8002_edm,
+      c8002_action,
+      c8002_cid ,
+      c8002_artid,
+      c8002_title,
+      c8002_auto,
+      c8002_language ,
+      c8002_keyword ,
+      COUNT(CASE WHEN (c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
+      COUNT(CASE WHEN (c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
+      AVG(CASE WHEN (c8002_action = 'VIDEOVIEW')
+      THEN c8002_video_duration ELSE NULL END ) AS average_duration
       FROM  Testing_BQ.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
       ORDER BY 1,2,3,4,5 ASC
