@@ -9,6 +9,11 @@ include: "*.dashboard"
 # NOTE: please see https://looker.com/docs/r/sql/bigquery?version=4.10
 # NOTE: for BigQuery specific considerations
 
+explore: contentview {
+  label: "1) Content Views Detail (2 mths by time)"
+  view_label: "All Content Views"
+  }
+
 explore: view_aggregate {
   label: "6) Content Summary by Users (2 mths by day)."
   view_label: "Content & Users"
