@@ -12,27 +12,27 @@ view: view_aggregate {
 
     sql: SELECT
       DATE(contentview.c8002_datetime) as c8002_datetime,
-      contentview.c8002_product ,
-      contentview.c8002_region ,
-      contentview.c8002_platform ,
-      contentview.c8002_source ,
-      contentview.c8002_app_version,
-      contentview.c8002_category,
-      contentview.c8002_channel,
-      contentview.c8002_section ,
-      contentview.c8002_news ,
-      contentview.c8002_action,
-      contentview.c8002_auto,
-      contentview.c8002_cid ,
-      contentview.c8002_nxtu_or_did ,
-      COUNT(CASE WHEN (contentview.c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
-      COUNT(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
-      AVG(CASE WHEN (contentview.c8002_action = 'VIDEOVIEW')
-      THEN contentview.c8002_video_duration ELSE NULL END ) AS average_duration
+      c8002_product ,
+      c8002_region ,
+      c8002_platform ,
+      c8002_source ,
+      c8002_app_version,
+      c8002_category,
+      c8002_channel,
+      c8002_section ,
+      c8002_news ,
+      c8002_action,
+      c8002_auto,
+      c8002_cid ,
+      c8002_nxtu_or_did ,
+      COUNT(CASE WHEN (c8002_action = 'PAGEVIEW') THEN 1 ELSE NULL END) AS total_page_views,
+      COUNT(CASE WHEN (c8002_action = 'VIDEOVIEW') THEN 1 ELSE NULL END) AS total_video_views,
+      AVG(CASE WHEN (c8002_action = 'VIDEOVIEW')
+      THEN c8002_video_duration ELSE NULL END ) AS average_duration
       FROM Testing_BQ.t8002_contentview AS contentview
       GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14
        ;;
-    sql_trigger_value: SELECT 1 ;;
+    sql_trigger_value: SELECT 2 ;;
     # persist_for: "6 hours"
     # ìndexes: ["c8002_datetime" , "c8002_cid" ]
     # distribution: "c8002_cid"
