@@ -1,5 +1,5 @@
 view: contentview {
-  sql_table_name: public.t8002_contentview ;;
+  sql_table_name:   bigquerytest-157909:Testing_BQ.t8002_contentview ;;
 
   dimension: view_type {
     description: "PAGEVIEW or VIDEOVIEW"
