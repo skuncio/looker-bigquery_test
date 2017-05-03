@@ -10,17 +10,17 @@ include: "*.dashboard"
 # NOTE: for BigQuery specific considerations
 
 explore: contentview {
-  label: "1) Content Views Detail (2 mths by time)"
+  label: "1) Content Views Detail (67 days by time)"
   view_label: "All Content Views"
   }
 
 explore: view_aggregate {
-  label: "6) Content Summary by Users (2 mths by day)."
+  label: "3) Content Summary by Users (67 days by day)."
   view_label: "Content & Users"
   }
 
 explore: view_aggregate_with_article {
-  label: "2) Content Summary by CID (2 mths by day)"
+  label: "2) Content Summary by CID (67 days by day)"
   view_label: "Article & Video Views - Summary"
   }
 
