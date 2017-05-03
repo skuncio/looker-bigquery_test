@@ -1,5 +1,5 @@
 view: t8002_contentview {
-  sql_table_name:   bigquerytest-157909:Testing_BQ.t8002_contentview ;;
+  sql_table_name:   Testing_BQ.t8002_contentview ;;
 
   dimension: c8002_action {
     type: string
