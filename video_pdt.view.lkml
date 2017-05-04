@@ -3,10 +3,10 @@ view: video_pdt {
     #   sql_trigger_value: select date(convert_timezone('hkt', getdate()))
     #sortkeys: ["c8002_datetime"]
     #distribution: "c8002_cid"
-    sql: select * from public.t8002_contentview
+    sql: select * from Testing_BQ.t8002_contentview
       where c8002_action like 'VIDEO%'
        ;;
-    sql_trigger_value: SELECT 1  ;;
+    sql_trigger_value: SELECT 2  ;;
   }
 
   dimension: c8002_action {
