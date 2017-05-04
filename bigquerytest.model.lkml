@@ -19,13 +19,18 @@ explore: view_aggregate {
   view_label: "Content & Users"
   }
 
+explore: view_aggregate_with_article {
+  label: "3) BigQuery Content Summary by CID (67 days by day)"
+  view_label: "Article & Video Views - Summary"
+  }
+
 explore: page_pdt {
-  label: "3) BigQuery Page Views (67 days by time)"
+  label: "4) BigQuery Page Views (67 days by time)"
   view_label: "Page Views"
   }
 
 explore: video_pdt {
-  label: "4) BigQuery Video Views (67 days by time)"
+  label: "5) BigQuery Video Views (67 days by time)"
   view_label: "Video Views"
 }
 
