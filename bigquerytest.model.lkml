@@ -19,10 +19,15 @@ explore: view_aggregate {
   view_label: "Content & Users"
   }
 
-#explore: view_aggregate_with_article {
-#  label: "2) Content Summary by CID (67 days by day)"
-#  view_label: "Article & Video Views - Summary"
-#  }
+explore: page_pdt {
+  label: "3) Page Views (67 days by time)"
+  view_label: "Page Views"
+  }
+
+explore: video_pdt {
+  label: "4) Video Views (67 days by time)"
+  view_label: "Video Views"
+}
 
 explore: t8001_user_crossref {}
 
