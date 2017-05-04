@@ -15,14 +15,14 @@ explore: contentview {
   }
 
 explore: view_aggregate {
-  label: "3) Content Summary by Users (67 days by day)."
+  label: "2) Content Summary by Users (67 days by day)."
   view_label: "Content & Users"
   }
 
-explore: view_aggregate_with_article {
-  label: "2) Content Summary by CID (67 days by day)"
-  view_label: "Article & Video Views - Summary"
-  }
+#explore: view_aggregate_with_article {
+#  label: "2) Content Summary by CID (67 days by day)"
+#  view_label: "Article & Video Views - Summary"
+#  }
 
 explore: t8001_user_crossref {}
 
